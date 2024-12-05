@@ -1,0 +1,31 @@
+<h2>Rental List</h2>
+<button class="btn btn-success mb-3" [routerLink]="'/rentals/add'">Add Rental</button>
+<button class="btn btn-primary" [routerLink]="'/cars'">View Cars</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Customer Name</th>
+      <th>Car Id</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Total Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rental of rentals">
+      <td>{{ rental.id }}</td>
+      <td>{{ rental.customerName }}</td>
+      <td>{{ rental.carId }}</td>
+      <td>{{ rental.startDate | date }}</td>
+      <td>{{ rental.endDate | date }}</td>
+      <td>{{ rental.totalPrice | currency }}</td>
+      <td>
+        <button (click)="deleteRental(rental.id)">Delete</button>
+        <button [routerLink]="['/rentals/edit', rental.id]">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

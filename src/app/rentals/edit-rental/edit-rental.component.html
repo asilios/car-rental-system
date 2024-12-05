@@ -1,0 +1,30 @@
+<h2>Edit Rental</h2>
+<form [formGroup]="rentalForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="customerName">Customer Name:</label>
+    <input id="customerName" type="text" formControlName="customerName" class="form-control" />
+  </div>
+
+  <div class="form-group">
+    <label for="carId">Car Id:</label>
+    <input id="carId" type="number" formControlName="carId" class="form-control" />
+  </div>
+
+  <div class="form-group">
+    <label for="startDate">Start Date:</label>
+    <input id="startDate" type="date" formControlName="startDate" class="form-control" />
+  </div>
+
+  <div class="form-group">
+    <label for="endDate">End Date:</label>
+    <input id="endDate" type="date" formControlName="endDate" class="form-control" />
+  </div>
+
+  <div class="form-group">
+    <label for="totalPrice">Total Price:</label>
+    <input id="totalPrice" type="number" formControlName="totalPrice" class="form-control" />
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="rentalForm.invalid">Save</button>
+  <button type="button" class="btn btn-secondary" (click)="router.navigate(['/rentals'])">Cancel</button>
+</form>

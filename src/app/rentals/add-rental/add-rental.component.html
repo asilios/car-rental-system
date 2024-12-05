@@ -1,0 +1,19 @@
+<h2>Add Rental</h2>
+<form (ngSubmit)="addRental()">
+  <label for="customerName">Customer Name:</label>
+  <input type="text" id="customerName" [(ngModel)]="rental.customerName" name="customerName" required />
+
+  <label for="carId">Car Id:</label>
+  <input type="number" id="carId" [(ngModel)]="rental.carId" name="carId" required />
+
+  <label for="startDate">Start Date:</label>
+  <input type="date" id="startDate" [(ngModel)]="rental.startDate" name="startDate" required />
+
+  <label for="endDate">End Date:</label>
+  <input type="date" id="endDate" [(ngModel)]="rental.endDate" name="endDate" required />
+
+  <label for="totalPrice">Total Price:</label>
+  <input type="number" id="totalPrice" [(ngModel)]="rental.totalPrice" name="totalPrice" required />
+
+  <button type="submit">Add Rental</button>
+</form>

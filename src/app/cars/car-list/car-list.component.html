@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Car List</h2>
+  <button class="btn btn-success mb-3" [routerLink]="'/cars/add'">Add New Car</button>
+  <button class="btn btn-primary" [routerLink]="'/rentals'">View Rentals</button>
+
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>#</th>
+        <th>Model</th>
+        <th>Type</th>
+        <th>Price Per Day</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let car of cars; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ car.model }}</td>
+        <td>{{ car.type }}</td>
+        <td>{{ car.pricePerDay | currency }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm" [routerLink]="['/cars/edit', car.id]">
+            Edit
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="deleteCar(car.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

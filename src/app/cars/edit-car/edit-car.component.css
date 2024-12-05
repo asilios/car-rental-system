@@ -1,0 +1,96 @@
+/* General Form Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Form Header */
+h2 {
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Label Styling */
+label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Input Field Styling */
+input[type="text"],
+input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button Styling */
+button {
+  padding: 12px 20px;
+  background-color: #28a745;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: center;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Error styling (optional) */
+input:invalid {
+  border-color: #dc3545;
+}
+
+input:invalid:focus {
+  border-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    padding: 8px;
+  }
+
+  button {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}
